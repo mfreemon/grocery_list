@@ -10,14 +10,13 @@
     <script src="js/vendor/modernizr.js"></script>
   </head>
   <body>
-      <div class="container">
-        
+    <div class="container">  
         <form>
           <div class="row">
-            <div class="large-10 columns">
-              <input type="text" placeholder="What to buy?" />
+            <div class="medium-8 columns">
+              <input class ="item-input" type="text" placeholder="What to buy?" />
             </div>  
-            <div class ="large-2 columns">
+            <div class ="medium-4 columns">
                <button type = "submit" class="button round success">Add Item</button>
             </div>  
           </div>
@@ -25,24 +24,45 @@
 
 
         <section class ="shopping-list large-12 columns"> 
-          <div class="grocery-cell large-10 columns">
+          <div class="grocery-cell large-12 columns">
             <input type ="checkbox" id ="checkbox1">
-            <p>Apple</p>
-            <p id="comments-tab"><a href="#">Comments</a></p>
-            
-          </div> 
-          <div class="comments large-10 columns"><p>See if this works</p></div>      
-            
+            <p id ="grocery-item">Apple</p>
+            <p id="comments-tab"><a href="#" alt ="View Comments">Comments</a></p> 
+          </div>
+          <div class = "comment-list large-12 columns">
+            <ul>
+              <li class="comments"> This is a Comment</li>
+            </ul>  
+          <div>
         </section>
-
-
-       
     
-      </div>    
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
 
     
-    <script src="js/vendor/jquery.js"> </script>
-    <script src="js/vendor/jquery-ui.min.js"> </script>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="js/grocery.js"></script>
     <script>
