@@ -1,49 +1,54 @@
-// var comments = '<ul id ="comment-list"><li><div class="comments large-10 columns"><p>See if this works</p></div><li></ul>';
+
+$(document).ready(function(){
+
+var comments = '<div class = "comment-list large-12 columns"><ul><li class="comments">This is a Comment</li></ul></div>';
 // var groceries = '<h3>'+'<div class="item large-10 columns">'+'<p>'+'dog'+'</p>' 
 // 					+'</div>'+'</h3>'+'<div class="comments large-10 columns">'
 // 					+'<p>'+'See if this works'+'</p>'+'</div>';
 
 
+	$('button').on('click', append); 	
+	$(".shopping-list").on('click','#comments-tab', accordion); 	
+	$('.shopping-list').on('change', '.grocery-item #checkbox1', checkoff);
+	$('.shopping-list').on('click','.grocery-item #delete', remove);
+
+		
 
 
 
 
-	function Accordion(){	
-		$(".grocery-cell").on('click','#comments-tab', function(event){
-			event.preventDefault();
-			$('.comment-list').slideToggle();
-	})
-};
+	function accordion(event){
+		event.preventDefault();
+		$(this).closest('.grocery-cell').children('.comment-list').slideToggle();
+	}
 
+	function remove(event){
+		event.preventDefault();
+		$(this).closest('.grocery-cell').remove();
+	}
 
-	function Checkoff(){
-		$('#checkbox1').on('change', function(){ 
+	function checkoff(){ 
 			if ($(this).is(':checked')) {
-    			 $('#grocery-item').css('text-decoration', 'line-through');
+    			 $(this).next('#food').css('text-decoration', 'line-through');
  			 } else {
-     		$('#grocery-item').css('text-decoration', 'none');
+     		$(this).next('#food').css('text-decoration', 'none');
   			}	
-		})
-	};
- //  			
-	// 	})
-	// };
+	}
+ 
+ 	function append (event){
+		event.preventDefault();
+		x = $('input').val();
+		//console.log(x);	
+		$('.shopping-list').append('<div class="grocery-cell large-12 columns"><div class ="grocery-item large-12 columns"><input type ="checkbox" id ="checkbox1"><p id ="food">' + x + '</p><p id = "delete"><a href="#"><img src="img/delete.png"></a></p><p id="comments-tab"><a href="#" alt ="View Comments">Comments</a></p></div>' + comments + '</div>');		
+		console.log('we made it');
+		$('input').val('');					
+	}
 
-	// function Append (){
-	// $('button').on('click', function(event, x){
-	// 	event.preventDefault();
-	// 	x = $('input').val();
-	// 	console.log(x);	
-	// 	$('.shopping-list').append('<div class="grocery-cell large-10 columns"><input type ="checkbox" id ="checkbox1"><p id="grocery-item">'+x+'</p><p id="comments-tab"><a href="#" alt ="View Comments">Comments</a></p></div>' + comments);		
-	// 	console.log('we made it');
-	// 	$('input').val('');				
-	// 	})	
-	// };
+});	
 
-	
-$(document).ready(function(){
-	Accordion();
-	// Append();
-	Checkoff();
-
-});
+// $(document).ready(function(){
+// 	accordion();
+// 	append();
+// 	checkoff();
+// 	delete();
+// });
