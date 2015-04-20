@@ -43,9 +43,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-body {
-  background: #f5f5f5; }
-
 .container {
   margin: 0 auto;
   width: 750px;
@@ -56,20 +53,43 @@ body {
   border-radius: 5px !important;
   font-size: 30px !important; }
 
+.grocery-cell {
+  padding: 0 15px 0 15px;
+  margin-bottom: 5px; }
+
 .grocery-item {
   background: rgba(18, 25, 28, 0.6);
+  padding: 0 15px 0 15px;
   height: 100px;
   color: #fff;
+  font-size: 40px;
   line-height: 100px;
-  border-radius: 5px;
-  margin-bottom: 5px; }
+  border-radius: 5px; }
   .grocery-item p {
     display: inline-block; }
   .grocery-item input {
-    display: inline-block; }
+    line-height: 100px;
+    vertical-align: 10px;
+    margin-right: 20px;
+    float: left; }
+
+#delete {
+  float: right; }
 
 #comments-tab {
-  float: right; }
+  float: right;
+  margin-right: 50px;
+  font-size: 14px; }
+
+#add-tab {
+  font-size: 14px; }
+
+.new-comment {
+  display: none; }
+  .new-comment textarea {
+    border-radius: 5px;
+    border: 1px solid #0abefa;
+    margin: 0; }
 
 .comment-list {
   display: none; }
@@ -77,11 +97,12 @@ body {
     margin-left: -15px; }
 
 .comments {
+  width: 690px;
   background-color: rgba(53, 238, 254, 0.5);
   color: #000;
   height: 100px;
   line-height: 100px;
   border-radius: 5px;
-  margin: -5px 0 5px 0; }
+  border: .5px solid #2afa00; }
   .comments p {
     vertical-align: middle; }
