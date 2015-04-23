@@ -44,9 +44,13 @@ table {
   border-spacing: 0; }
 
 .container {
-  margin: 0 auto;
-  width: 750px;
   margin-top: 100px; }
+
+.button#entry {
+  float: right; }
+
+.shopping-list {
+  padding: 0 0 0 15px; }
 
 .item-input {
   height: 100px !important;
@@ -61,48 +65,67 @@ table {
   background: rgba(18, 25, 28, 0.6);
   padding: 0 15px 0 15px;
   height: 100px;
-  color: #fff;
-  font-size: 40px;
   line-height: 100px;
   border-radius: 5px; }
   .grocery-item p {
-    display: inline-block; }
+    display: inline-block;
+    float: left; }
   .grocery-item input {
     line-height: 100px;
     vertical-align: 10px;
-    margin-right: 20px;
+    margin: 40px 20px 0 0;
     float: left; }
 
+#food {
+  overflow: hidden;
+  color: #fff;
+  padding: 0;
+  font-size: 40px; }
+
 #delete {
-  float: right; }
+  float: right;
+  padding: 0; }
 
 #comments-tab {
   float: right;
-  margin-right: 50px;
-  font-size: 14px; }
+  padding: 0;
+  font-size: 14px;
+  margin-right: 10px; }
 
 #addtab {
-  font-size: 14px; }
+  font-size: 14px;
+  padding: 0;
+  float: right; }
 
 .new-comment {
-  display: none; }
+  display: none;
+  height: 50px; }
   .new-comment textarea {
     border-radius: 5px;
     border: 1px solid #0abefa;
-    margin: 0; }
+    margin: 0;
+    display: inline-block; }
+  .new-comment div {
+    padding: 0; }
+
+#family-member {
+  height: 50px; }
 
 .comment-list {
-  display: none; }
-  .comment-list ul {
-    margin-left: -15px; }
+  margin-top: -3px; }
+  .comment-list li p {
+    display: inline-block; }
+
+.person {
+  display: inline-block;
+  height: 50px; }
 
 .comments {
-  width: 705px;
   background-color: rgba(53, 238, 254, 0.5);
   color: #000;
   height: 100px;
   line-height: 100px;
   border-radius: 5px;
-  border: 1px solid #2afa00; }
+  border: 1px solid #B7B8B7; }
   .comments p {
     vertical-align: middle; }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
+    <title>Basket App | Welcome</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/main.css" />
 
@@ -11,29 +11,47 @@
   </head>
   <body>
     <div class="container">  
-        <form>
-          <div class="row">
-            <div class="medium-8 columns">
-              <input class ="item-input" type="text" placeholder="What to buy?" />
-            </div>  
-            <div class ="medium-4 columns">
-               <button type = "submit" class="button round success">Add Item</button>
-            </div>  
-          </div>
-        </form> 
+      <div class = "large-3 large-centered medium-5 medium-centered small-6 small-centered columns"><h1> Basket App</h1></div>
+      <form>
+        <div class="row">
+          <div class="large-6 medium-6 medium-centered large-centered columns">
+            <input class ="item-input" type="text" placeholder="What to buy?" />
+          </div>  
+          <div class ="large-6 medium-6 small-6 columns">
+              <button type = "submit" class="button tiny round success" id="entry">Add Item</button>
+          </div> 
+          <div class ="large-6 medium-6 small-6 columns">
+              <button type = "submit" class="button tiny round new-list">New List</button>
+          </div>  
+        </div>
+      </form> 
 
 
-        <section class ="shopping-list large-12 columns"> 
-          <div class="grocery-cell large-12 columns">
-            <div class = "grocery-item large-12 columns">
+        <section class ="shopping-list large-8 large-centered medium-10 medium-centered small-12 small-centered columns"> 
+          <!-- <div class="grocery-cell ">
+            <div class = "grocery-item">
               <p><input type ="checkbox" id ="checkbox1"></p>
-              <p id ="food">Apple</p>
-              <p id = "delete"><a href="#"><img src="img/delete.png"></a></p>
-              <p id="comments-tab"><a href="#" alt ="View Comments">Comments</a></p>
-              <p id ="addtab"><a href="#">Add a Comment</a></p>            
+              <p id ="food" class="large-4 medium-4 small-4 columns">Apple</p>
+              <p  class = "small-2 columns" id = "delete" ><a href="#"><img src="img/delete.png"></a></p>
+              <div class="medium-1 small-1 columns" id ="delete"><a href="#"><img src="img/delete.png"></a></div>
+              <p class ="medium-2 small-2 columns" id="comments-tab"><a href="#" alt ="View Comments">Comments</a></p>               
             </div> 
-            <div class = "new-comment"><textarea type ="text" id="textbox"  placeholder="Add a Comment"></textarea></div> 
-            <div class = "comment-list large-12 columns">   
+            <div class = "new-comment"> -->
+              <!-- <form>
+                <div class ="large-8 columns">
+                  <textarea type ="text" id="textbox"  placeholder="Add a Comment"></textarea>
+                </div>
+                <div class = "person large-4 columns">
+                  <select id = "family-member">
+                    <option value ="Mom">Mom</option>
+                    <option value ="Dad">Dad</option>
+                    <option value ="Sister">Sister</option>
+                    <option value ="Brother">Brother</option>
+                  </select>
+                </div>
+              </form> -->
+            <!-- </div> 
+            <div class ="comment-list">   
               <ul> 
                <li class="comments"> 
                 <p>This is a Comment</p>
@@ -41,8 +59,7 @@
               </li>
               </ul>  
             </div>
-          </div>  
-          
+          </div>  -->         
         </section>
   
     </div>

@@ -1,8 +1,15 @@
 
 $(document).ready(function(){
-
-var comments = '<div class = "comment-list large-12 columns"><ul></ul></div>';
-var comment_text ='<div class = "new-comment" ><textarea type ="text" id="textbox"  placeholder="Add a Comment"></textarea></div>'; 
+var comment_text =['<div class = "new-comment"><form>',
+				'<div class = "large-8 columns"><textarea type ="text" id="textbox" placeholder="Add a Comment"></textarea></div>',
+				'<div class = "person large-4 columns">',
+                '<select id = "family-member">',
+                '<option value ="Mom">Mom</option>',
+                '<option value ="Dad">Dad</option>',
+                '<option value ="Sister">Sister</option>',
+                '<option value ="Brother">Brother</option></select></div>',
+                '<div class = "comment-list large-12 columns"><ul></ul></div>',
+               	'</div></form></div>']; 
 //var grocery_cell =' <div class="grocery-cell large-12 columns"><div class ="grocery-item large-12 columns"><input type ="checkbox" id ="checkbox1"><p id ="food"></p><p id = "delete"><a href="#"><img src="img/delete.png"></a></p><p id="comments-tab"><a href="#" alt ="View Comments">Comments</a></p></div> + comments +' '</div>';
 
 // var comments = function(comment){
@@ -11,49 +18,49 @@ var comment_text ='<div class = "new-comment" ><textarea type ="text" id="textbo
 
 
 	//$('body').css('background-image','url(./img/wood.jpg)');
-	$('button').on('click', append); 	
-	$(".shopping-list").on('click','#comments-tab', accordion); 	
+	$('#entry').on('click', append);
+	$('.new-list').on('click', new_list);
+	$(".shopping-list").on('click','.grocery-cell #comments-tab', new_comment); 	
 	$('.shopping-list').on('change', '.grocery-item #checkbox1', checkoff);
-	$('.shopping-list').on('click','.grocery-item #delete', remove);
-	$('.shopping-list').on('click', '.grocery-item #addtab', new_comment);	
-	$('.shopping-list').keypress('#textbox', add_comment);
+	$('.shopping-list').on('click','.grocery-item #delete', remove);	
+	$('.shopping-list').on('keypress','.new-comment #textbox', add_comment);
+	//$('button .new-list').on('click', new_list);	
  	
-		
-
+	
 	function new_comment(event){
 		event.preventDefault();
-		$(this).closest('.grocery-cell').children('.new-comment').slideToggle("slow", "swing");
-		//$(this).closest('.grocery-cell').children('.comment-list').slideToggle();
+		$(this).closest('.grocery-cell').find('.new-comment').slideToggle("slow",function(){});
 	}
-
-	function accordion(event){
-		event.preventDefault();
-		$(this).closest('.grocery-cell').children('.comment-list').slideToggle("slow", "swing");
-	}
-
+	
 	function remove(event){
 		event.preventDefault();
-		$(this).closest('.grocery-cell').remove();
+		$(this).closest('.grocery-cell').fadeOut('slow');
+	}
+	
+	function new_list(event){
+		event.preventDefault();
+		$('.shopping-list').children('.grocery-cell').fadeOut();
 	}
 
 	function checkoff(){ 
-			if ($(this).is(':checked')) {
-    			 $(this).next('#food').css('text-decoration', 'line-through');
- 			 } else {
+		if ($(this).is(':checked')) {
+    		$(this).next('#food').css('text-decoration', 'line-through');
+ 			} else {
      		$(this).next('#food').css('text-decoration', 'none');
-  			}	
+  		}	
 	}
 	
 	function add_comment(){
-		var text_comm = $('#textbox').val();
+		var text_comm = $(this).closest('.grocery-cell').find('#textbox').val();
 		console.log(text_comm);
+		var person = $('option:selected').val();
 		var keycode = (event.keyCode ? event.keyCode : event.which);
-		if(keycode == '13'){
-			$('.comment-list ul').append('<li class="comments">This is a Comment</li>');
-			alert('You pressed a "enter" key in textbox');	
+		if(keycode == '13'){	
+			$(this).closest('.grocery-cell').find('.comment-list ul').append('<li class="comments"><p>'+ person+'</p>'+'<p>'+text_comm+ '</p></li>');	
 			$('#textbox').val('');
-		}		
-	}
+			alert(person);
+		}	
+	}			
 	
 	function append (event){
 		event.preventDefault();
@@ -62,11 +69,11 @@ var comment_text ='<div class = "new-comment" ><textarea type ="text" id="textbo
 			'<div class="grocery-cell large-12 columns">',
 			'<div class ="grocery-item large-12 columns">',
 			'<input type ="checkbox" id ="checkbox1">',
-			'<p id="food">'+ x + '</p><p id = "delete"><a href="#"><img src="img/delete.png"></a></p>',
-			'<p id="comments-tab"><a href="#" alt ="View Comments">Comments</a></p>',
-			'<p id="addtab"><a href="#">Add a Comment</a></p></div>'
+			'<p id ="food" class="large-3 medium-3 small-4 columns">'+ x + '</p>',
+			'<div class="medium-1 small-1 columns" id ="delete"><a href="#"><img src="img/delete.png"></a></div>',
+			'<p class ="medium-2 small-2 columns" id="comments-tab"><a href="#" alt ="View Comments">Comments</a></p></div>'
 		];
-		$('.shopping-list').append(groceries.join('') + comment_text + comments+'</div>');	
+		$('.shopping-list').append(groceries.join('') + comment_text.join(''));	
 		$('input').val('');					
 	}
 });	
