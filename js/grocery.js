@@ -1,20 +1,17 @@
 
 $(document).ready(function(){
 var comment_text =['<div class = "new-comment"><form>',
-				'<div class = "large-8 columns"><textarea type ="text" id="textbox" placeholder="Add a Comment"></textarea></div>',
-				'<div class = "person large-4 columns">',
+				'<div class = "large-6 columns"><textarea type ="text" id="textbox" placeholder="Add a Comment"></textarea></div>',
+				'<div class = "person large-3 columns">',
                 '<select id = "family-member">',
                 '<option value ="Mom">Mom</option>',
                 '<option value ="Dad">Dad</option>',
                 '<option value ="Sister">Sister</option>',
                 '<option value ="Brother">Brother</option></select></div>',
-                '<div class = "comment-list large-12 columns"><ul></ul></div>',
-               	'</div></form></div>']; 
-//var grocery_cell =' <div class="grocery-cell large-12 columns"><div class ="grocery-item large-12 columns"><input type ="checkbox" id ="checkbox1"><p id ="food"></p><p id = "delete"><a href="#"><img src="img/delete.png"></a></p><p id="comments-tab"><a href="#" alt ="View Comments">Comments</a></p></div> + comments +' '</div>';
-
-// var comments = function(comment){
-// 		'<div class = "comment-list large-12 columns"><ul><li class="comments">' + comment +'</li></ul></div>';
-// };	
+                '<div class = "large-3 columns">',
+                '<button class="button radius add-comment">Post Comment</button></div>',  
+       			'<div class = "comment-list large-12 columns"><ul></ul></div>',
+               	'</div></form></div>']; 	
 
 
 	//$('body').css('background-image','url(./img/wood.jpg)');
@@ -23,7 +20,7 @@ var comment_text =['<div class = "new-comment"><form>',
 	$(".shopping-list").on('click','.grocery-cell #comments-tab', new_comment); 	
 	$('.shopping-list').on('change', '.grocery-item #checkbox1', checkoff);
 	$('.shopping-list').on('click','.grocery-item #delete', remove);	
-	$('.shopping-list').on('keypress','.new-comment #textbox', add_comment);
+	$('.shopping-list').on('keypress click','.new-comment #textbox', add_comment);
 	//$('button .new-list').on('click', new_list);	
  	
 	
@@ -36,7 +33,7 @@ var comment_text =['<div class = "new-comment"><form>',
 		event.preventDefault();
 		$(this).closest('.grocery-cell').fadeOut('slow');
 	}
-	
+
 	function new_list(event){
 		event.preventDefault();
 		$('.shopping-list').children('.grocery-cell').fadeOut();
@@ -50,15 +47,15 @@ var comment_text =['<div class = "new-comment"><form>',
   		}	
 	}
 	
-	function add_comment(){
+	function add_comment(e){
 		var text_comm = $(this).closest('.grocery-cell').find('#textbox').val();
 		console.log(text_comm);
-		var person = $('option:selected').val();
+		var person = $(this).closest('.new-comment').find('option:selected').val();
 		var keycode = (event.keyCode ? event.keyCode : event.which);
-		if(keycode == '13'){	
+		if(keycode === 13 || e.type =='click'){	
 			$(this).closest('.grocery-cell').find('.comment-list ul').append('<li class="comments"><p>'+ person+'</p>'+'<p>'+text_comm+ '</p></li>');	
-			$('#textbox').val('');
 			alert(person);
+			$(this).closest('#textbox').val('');
 		}	
 	}			
 	

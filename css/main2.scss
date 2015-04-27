@@ -68,6 +68,9 @@ body{
 .grocery-cell{
     padding: 0 15px 0 0;
     margin-bottom:5px;
+    p{
+        padding:0;
+    }
 }
 .grocery-item{
     background:rgba(18, 25, 28, 0.6);
@@ -95,24 +98,25 @@ body{
 #delete{
     float:right;
     padding: 0;
-    margin-top:10px;
+    margin-top:5px;
+    a{
+        float:right;
+    }
+}
+.add-tab{
+    float:right;
 }
 #comments-tab{
     float:right;
     padding:0;
-    font-size: 14px;
     margin-right:10px; 
-}
-#addtab{
-    font-size: 14px;
-    padding:0;
-    float:right;
 }
 
 .new-comment{
     display: none;
     height:50px;
     textarea{
+    height:100px;
     border-radius:5px;
     border: 1px solid #0abefa;
     margin: 0;
@@ -130,11 +134,11 @@ body{
     }
 }
 .comment-list{
+    display: none;
     li p{
         display: inline-block;
     }
 }
-
 
 .comments{   
     background-color:rgba(53, 238, 254, 0.5);
@@ -149,10 +153,13 @@ body{
     }
 }
 
-
-// @media (max-width: 600px) {
- 
-// }
-
-
-
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}

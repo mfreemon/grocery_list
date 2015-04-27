@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basket App | Welcome</title>
     <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/main2.css" />
 
     <script src="js/vendor/modernizr.js"></script>
   </head>
@@ -18,39 +18,24 @@
             <input class ="item-input" type="text" placeholder="What to buy?" />
           </div>  
           <div class ="large-6 medium-6 small-6 columns">
-              <button type = "submit" class="button tiny round success" id="entry">Add Item</button>
+              <button type = "submit" class="button radius success" id="entry">Add Item</button>
           </div> 
           <div class ="large-6 medium-6 small-6 columns">
-              <button type = "submit" class="button tiny round new-list">New List</button>
-          </div>  
+              <button type = "submit" class="button radius new-list">New List</button>
+          </div> 
         </div>
       </form> 
 
 
         <section class ="shopping-list large-8 large-centered medium-10 medium-centered small-12 small-centered columns"> 
-          <!-- <div class="grocery-cell ">
+          <div class="grocery-cell ">
             <div class = "grocery-item">
               <p><input type ="checkbox" id ="checkbox1"></p>
               <p id ="food" class="large-4 medium-4 small-4 columns">Apple</p>
-              <p  class = "small-2 columns" id = "delete" ><a href="#"><img src="img/delete.png"></a></p>
               <div class="medium-1 small-1 columns" id ="delete"><a href="#"><img src="img/delete.png"></a></div>
-              <p class ="medium-2 small-2 columns" id="comments-tab"><a href="#" alt ="View Comments">Comments</a></p>               
-            </div> 
-            <div class = "new-comment"> -->
-              <!-- <form>
-                <div class ="large-8 columns">
-                  <textarea type ="text" id="textbox"  placeholder="Add a Comment"></textarea>
-                </div>
-                <div class = "person large-4 columns">
-                  <select id = "family-member">
-                    <option value ="Mom">Mom</option>
-                    <option value ="Dad">Dad</option>
-                    <option value ="Sister">Sister</option>
-                    <option value ="Brother">Brother</option>
-                  </select>
-                </div>
-              </form> -->
-            <!-- </div> 
+              <p class =" large-3 medium-3 small-3 columns"><a href="#new-comment" class="add-tab">Add Comment</a></p> 
+              <p class =" large-3 medium-3 small-3 columns"><a href="#" id="comments-tab">View Comments</a></p>            
+            </div>  
             <div class ="comment-list">   
               <ul> 
                <li class="comments"> 
@@ -58,8 +43,23 @@
                 <p><img src =""></p>
               </li>
               </ul>  
-            </div>
-          </div>  -->         
+            </div> 
+            <div id="new-comment" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+              <form>
+                <div class = "person large-3 medium-3 small-3 columns">
+                  <select id = "family-member">
+                    <option value ="Mom">Mom</option>
+                    <option value ="Dad">Dad</option>
+                    <option value ="Sister">Sister</option>
+                    <option value ="Brother">Brother</option>
+                  </select>
+                </div>
+                <textarea type ="text" id="textbox"  placeholder="Add a Comment"></textarea>
+                <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                <button class="button radius add-comment" id ="post" >Post Comment</button>
+              </form> 
+            </div> 
+          <!-- </div>  -->         
         </section>
   
     </div>
@@ -68,20 +68,13 @@
 
 
 
-
-
-
-
-
-
-
-
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
-    <script src="js/grocery.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery.leanModal.min.js"></script>
+    <!-- // <script src ="js/foundation/foundation.reveal.js"></script> -->
+    <script src="js/grocery2.js"></script>
     <script>
-      $(document).foundation();
+      $(document).foundation('reflow');
     </script>
   </body>
 </html>
-
