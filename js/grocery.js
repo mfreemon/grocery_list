@@ -14,7 +14,6 @@ var comment_text =['<div class = "new-comment"><form>',
                	'</div></form></div>']; 	
 
 
-	//$('body').css('background-image','url(./img/wood.jpg)');
 	$('#entry').on('click', append);
 	$('.new-list').on('click', new_list);
 	$(".shopping-list").on('click','.grocery-cell #comments-tab', new_comment); 	
@@ -52,7 +51,7 @@ var comment_text =['<div class = "new-comment"><form>',
 		console.log(text_comm);
 		var person = $(this).closest('.new-comment').find('option:selected').val();
 		var keycode = (event.keyCode ? event.keyCode : event.which);
-		if(keycode === 13 || e.type =='click'){	
+		if(keycode === 13){	
 			$(this).closest('.grocery-cell').find('.comment-list ul').append('<li class="comments"><p>'+ person+'</p>'+'<p>'+text_comm+ '</p></li>');	
 			alert(person);
 			$(this).closest('#textbox').val('');

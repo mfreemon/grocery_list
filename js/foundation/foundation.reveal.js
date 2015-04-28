@@ -16,7 +16,7 @@
       dismiss_modal_class : 'close-reveal-modal',
       multiple_opened : false,
       bg_class : 'reveal-modal-bg',
-      root_element : 'body',
+      root_element :'.grocery-cell',
       open : function(){},
       opened : function(){},
       close : function(){},

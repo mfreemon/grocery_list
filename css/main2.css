@@ -99,18 +99,8 @@ table {
   padding: 0;
   margin-right: 10px; }
 
-.new-comment {
-  display: none;
-  height: 50px; }
-  .new-comment textarea {
-    height: 100px;
-    border-radius: 5px;
-    border: 1px solid #0abefa;
-    margin: 0;
-    display: inline-block; }
-  .new-comment div {
-    padding: 0;
-    height: 50px; }
+#new-comment {
+  position: fixed; }
 
 .person {
   padding: 0; }
@@ -118,9 +108,15 @@ table {
     height: 50px; }
 
 .comment-list {
-  display: none; }
-  .comment-list li p {
-    display: inline-block; }
+  display: none;
+  padding: 0; }
+  .comment-list li div {
+    overflow: scroll;
+    height: 100px; }
+    .comment-list li div p {
+      display: inline-block;
+      color: #767676;
+      font-size: 24px; }
 
 .comments {
   background-color: rgba(53, 238, 254, 0.5);
@@ -131,6 +127,9 @@ table {
   border: 1px solid #B7B8B7; }
   .comments p {
     vertical-align: middle; }
+
+.comm {
+  margin: 0 10px 0 15px; }
 
 #lean_overlay {
   position: fixed;

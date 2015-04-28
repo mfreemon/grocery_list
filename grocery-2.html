@@ -33,18 +33,19 @@
               <p><input type ="checkbox" id ="checkbox1"></p>
               <p id ="food" class="large-4 medium-4 small-4 columns">Apple</p>
               <div class="medium-1 small-1 columns" id ="delete"><a href="#"><img src="img/delete.png"></a></div>
-              <p class =" large-3 medium-3 small-3 columns"><a href="#new-comment" class="add-tab">Add Comment</a></p> 
-              <p class =" large-3 medium-3 small-3 columns"><a href="#" id="comments-tab">View Comments</a></p>            
+              <p class =" large-2 medium-3 small-3 columns"><a href="#" class="add-tab">Add Comment</a></p> 
+              <p class =" large-2 medium-3 small-3 columns"><a href="#" id="comments-tab">View Comments</a></p>     
             </div>  
             <div class ="comment-list">   
               <ul> 
                <li class="comments"> 
-                <p>This is a Comment</p>
-                <p><img src =""></p>
+                <div>
+                  <p>This is a Comment</p>
+                 <div> 
               </li>
               </ul>  
             </div> 
-            <div id="new-comment" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+            <div id="new-comment" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
               <form>
                 <div class = "person large-3 medium-3 small-3 columns">
                   <select id = "family-member">
@@ -54,12 +55,12 @@
                     <option value ="Brother">Brother</option>
                   </select>
                 </div>
-                <textarea type ="text" id="textbox"  placeholder="Add a Comment"></textarea>
-                <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                <textarea type ="text" id="textbox" placeholder="Add a Comment"></textarea>
+                <a class="close-reveal-modal" aria-label="Close" id="close">&#215;</a>
                 <button class="button radius add-comment" id ="post" >Post Comment</button>
               </form> 
             </div> 
-          <!-- </div>  -->         
+          </div>          
         </section>
   
     </div>
@@ -69,12 +70,14 @@
 
 
     <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/jquery-ui.min.js"></script>
+
     <script src="js/foundation.min.js"></script>
-    <script type="text/javascript" src="js/vendor/jquery.leanModal.min.js"></script>
-    <!-- // <script src ="js/foundation/foundation.reveal.js"></script> -->
+    <!-- // <script type="text/javascript" src="js/vendor/jquery.leanModal.min.js"></script> -->
+    <script src ="js/foundation/foundation.reveal.js"></script>
     <script src="js/grocery2.js"></script>
     <script>
-      $(document).foundation('reflow');
+      $(document).foundation();
     </script>
   </body>
 </html>
