@@ -48,6 +48,7 @@ body{
 }
 
 
+
 .container{
     margin-top:100px;
 }
@@ -129,10 +130,25 @@ body{
     height:50px;
     }
 }
+.visible{
+    display:block;
+}
+.hidden{
+    display: none;
+}
 .comment-list{
-    li p{
-        display: inline-block;
-    }
+    padding:0;
+        li{ 
+           div{
+            overflow: scroll;
+            height:100px;
+                p{
+                display: inline-block;
+                 color: #767676;
+                font-size: 24px;
+            }
+        }   
+    }    
 }
 
 
@@ -149,10 +165,9 @@ body{
     }
 }
 
-
-// @media (max-width: 600px) {
- 
-// }
+.comm{
+    margin:0 10px 0 15px;
+}
 
 
 

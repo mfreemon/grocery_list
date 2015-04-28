@@ -18,9 +18,7 @@ var comment_text =['<div id="new-comment" class="reveal-modal" data-reveal aria-
 	$(".shopping-list").on('click','.grocery-cell #comments-tab', view_comment); 	
 	$('.shopping-list').on('change','.grocery-item #checkbox1', checkoff);
 	$('.shopping-list').on('click','.grocery-item #delete', remove);
-	
-	$('.shopping-list').on('click','#post', add_comment);	
-	
+	$('.shopping-list').on('click','#post', add_comment);		
 	$('.shopping-list').on('click','.grocery-cell .add-tab', function(event){
 		event.preventDefault();
 		$(this).closest('.grocery-cell').find('#new-comment').foundation('reveal','open');

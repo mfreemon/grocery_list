@@ -131,12 +131,5 @@ table {
 .comm {
   margin: 0 10px 0 15px; }
 
-#lean_overlay {
-  position: fixed;
-  z-index: 100;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-  background: #000;
-  display: none; }
+.comm {
+  margin: 0 10px 0 15px; }

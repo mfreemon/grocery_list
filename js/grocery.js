@@ -1,17 +1,22 @@
 
 $(document).ready(function(){
 var comment_text =['<div class = "new-comment"><form>',
-				'<div class = "large-6 columns"><textarea type ="text" id="textbox" placeholder="Add a Comment"></textarea></div>',
-				'<div class = "person large-3 columns">',
-                '<select id = "family-member">',
-                '<option value ="Mom">Mom</option>',
-                '<option value ="Dad">Dad</option>',
-                '<option value ="Sister">Sister</option>',
-                '<option value ="Brother">Brother</option></select></div>',
-                '<div class = "large-3 columns">',
-                '<button class="button radius add-comment">Post Comment</button></div>',  
-       			'<div class = "comment-list large-12 columns"><ul></ul></div>',
-               	'</div></form></div>']; 	
+            '<div class ="large-6 columns">',
+            '<textarea type ="text" id="textbox" placeholder="Add a Comment"></textarea></div>',
+            '<div class = "person large-3 columns">',
+            '<select id = "family-member">',
+            '<option value ="Mom">Mom</option>',
+            '<option value ="Dad">Dad</option>',
+            '<option value ="Sister">Sister</option>',
+            '<option value ="Brother">Brother</option></select>',
+            '</div>',
+            '<div class = "large-3 columns">',
+            '<button class="button radius add-comment" id ="post" >Post Comment</button>',
+            '</div></form>',
+            '<div class = "comment-list hidden large-12 columns"><ul></ul></div></div>']; 
+
+
+           		
 
 
 	$('#entry').on('click', append);
@@ -19,7 +24,7 @@ var comment_text =['<div class = "new-comment"><form>',
 	$(".shopping-list").on('click','.grocery-cell #comments-tab', new_comment); 	
 	$('.shopping-list').on('change', '.grocery-item #checkbox1', checkoff);
 	$('.shopping-list').on('click','.grocery-item #delete', remove);	
-	$('.shopping-list').on('keypress click','.new-comment #textbox', add_comment);
+	$('.shopping-list').on('click','.new-comment #post', add_comment);
 	//$('button .new-list').on('click', new_list);	
  	
 	
@@ -46,16 +51,14 @@ var comment_text =['<div class = "new-comment"><form>',
   		}	
 	}
 	
-	function add_comment(e){
+	function add_comment(event){
+		event.preventDefault();
 		var text_comm = $(this).closest('.grocery-cell').find('#textbox').val();
-		console.log(text_comm);
+		alert(text_comm);
 		var person = $(this).closest('.new-comment').find('option:selected').val();
-		var keycode = (event.keyCode ? event.keyCode : event.which);
-		if(keycode === 13){	
-			$(this).closest('.grocery-cell').find('.comment-list ul').append('<li class="comments"><p>'+ person+'</p>'+'<p>'+text_comm+ '</p></li>');	
-			alert(person);
-			$(this).closest('#textbox').val('');
-		}	
+		$(this).closest('.grocery-cell').find('.comment-list').addClass("visible").removeClass("hidden");
+		$(this).closest('.grocery-cell').find('.comment-list ul').append('<li class="comments"><div><p class="comm">'+ person +':' + '</p>'+'<p>'+text_comm+'</p></div></li>');	
+		$(this).closest('.grocery-cell').find('#textbox').val('');	
 	}			
 	
 	function append (event){

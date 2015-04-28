@@ -110,11 +110,26 @@ table {
     padding: 0;
     height: 50px; }
 
-#family-member {
-  height: 50px; }
+.person {
+  padding: 0; }
+  .person select {
+    height: 50px; }
 
-.comment-list li p {
-  display: inline-block; }
+.visible {
+  display: block; }
+
+.hidden {
+  display: none; }
+
+.comment-list {
+  padding: 0; }
+  .comment-list li div {
+    overflow: scroll;
+    height: 100px; }
+    .comment-list li div p {
+      display: inline-block;
+      color: #767676;
+      font-size: 24px; }
 
 .comments {
   background-color: rgba(53, 238, 254, 0.5);
@@ -125,3 +140,6 @@ table {
   border: 1px solid #B7B8B7; }
   .comments p {
     vertical-align: middle; }
+
+.comm {
+  margin: 0 10px 0 15px; }
