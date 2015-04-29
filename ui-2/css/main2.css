@@ -114,6 +114,9 @@ h1 {
 #new-comment {
   position: fixed; }
 
+textarea {
+  max-width: 65%; }
+
 .person {
   padding: 0; }
   .person select {

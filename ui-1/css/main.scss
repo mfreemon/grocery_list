@@ -153,23 +153,21 @@ h1{
     display:block;
 }
 .hidden{
-    display: none;
+    visibility: hidden;
 }
 .comment-list{
     padding:0;
-    margin-top:-3px;
-        li{ 
-           div{
-            overflow: scroll;
-            height:100px;
-                p{
-                display: inline-block;
-                 color: #767676;
-                font-size: 24px;
-            }
+    margin-top:-2px;
+ }
+.comment-inner{
+    overflow: scroll;
+    height:100px;
+        p{
+        display: inline-block;
+        color: #767676;
+        font-size: 24px;
         }   
     }    
-}
 
 
 .comments{   

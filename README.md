@@ -9,7 +9,7 @@ Upon a second click of the 'Comments tab', the accordion toggles back to its ori
 
 
 
-The second UI follows much of the same layout as UI-1. The main difference being that the users comments are captured via a dropdown modal that displays once the user clicks 'Add Comment'. Once the 'Post' button is clicked, the comment is then appened(initially hidded) to the corresponding item and the modal is dismissed. 
+The second UI follows much of the same layout as UI-1. The main difference being that the users comments are captured via a dropdown modal that displays once the user clicks 'Add Comment'. Once the 'Post' button is clicked, the comment is then appened(initially hidden) to the corresponding item and the modal is dismissed. 
 
 Both UIs have the ability to strike through those items,via the checkbox, that have been 'bought' or delete items that are no longer desired or have been bought as well, via the delete button on the far right-hand side of each 'item div'.
 

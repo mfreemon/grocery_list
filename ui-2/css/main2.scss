@@ -127,19 +127,9 @@ h1{
 #new-comment{
     position: fixed;
 }
-// .new-comment{
-//     display: none;
-//     height:auto;
-//     textarea{
-//     height:200px;
-//     border: 1px solid #0abefa;
-//     margin: 0;
-//     display: inline-block;
-//     }
-//     div{
-//         padding:0;
-//     }
-// }
+textarea{
+    max-width: 65%;
+}
 .person{
     padding:0;
     select{

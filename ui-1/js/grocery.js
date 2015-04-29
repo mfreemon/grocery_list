@@ -17,7 +17,7 @@ var comment_text =['<div class = "new-comment"><form>',
 	//expands the accordion to reveal input area of commentary
 	function new_comment(event){
 		event.preventDefault();
-		$(this).closest('.grocery-cell').find('.new-comment').slideToggle("slow",function(){});
+		$(this).closest('.grocery-cell').find('.new-comment').slideToggle();
 	}
 	
 	//green delete button the removes the food item
@@ -45,7 +45,7 @@ var comment_text =['<div class = "new-comment"><form>',
   		}	
 	}
 	
-	//appends comments to the commment list which exist below input are for comments
+	//appends comments to the commment list which exist below input area for comments
 	function add_comment(event){
 		event.preventDefault();
 		var comm = $(this).closest('.grocery-cell').find('#textbox').val();
@@ -54,7 +54,7 @@ var comment_text =['<div class = "new-comment"><form>',
 			alert(person +"," + " " + "Please enter you comment");
 			}else{
 				$(this).closest('.grocery-cell').find('.comment-list').addClass("visible").removeClass("hidden");
-				$(this).closest('.grocery-cell').find('.comment-list ul').append('<li class="comments"><div><p class="comm">'+ person +':' + '</p>'+'<p>'+comm+'</p></div></li>');	
+				$(this).closest('.grocery-cell').find('.comment-list ul').append('<li class="comments"><div class ="comment-inner"><p class="comm">'+ person +':' + '</p>'+'<p>'+comm+'</p></div></li>');	
 			}
 		$(this).closest('.grocery-cell').find('#textbox').val('');			
 		}				
