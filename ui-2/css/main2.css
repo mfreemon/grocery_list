@@ -14,7 +14,6 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
   vertical-align: baseline; }
 
@@ -43,11 +42,24 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+h1 {
+  text-align: center; }
+
 .container {
   margin-top: 100px; }
 
 .button#entry {
   float: right; }
+
+.social {
+  margin-bottom: 10px; }
+
+.share {
+  float: right;
+  padding-right: 50px; }
+
+.email {
+  padding-left: 50px; }
 
 .shopping-list {
   padding: 0 0 0 15px; }
@@ -99,16 +111,8 @@ table {
   padding: 0;
   margin-right: 10px; }
 
-.new-comment {
-  display: none;
-  height: auto; }
-  .new-comment textarea {
-    height: 200px;
-    border: 1px solid #0abefa;
-    margin: 0;
-    display: inline-block; }
-  .new-comment div {
-    padding: 0; }
+#new-comment {
+  position: fixed; }
 
 .person {
   padding: 0; }
@@ -116,9 +120,15 @@ table {
     height: 50px; }
 
 .comment-list {
-  display: none; }
-  .comment-list li p {
-    display: inline-block; }
+  display: none;
+  padding: 0; }
+  .comment-list li div {
+    overflow: scroll;
+    height: 100px; }
+    .comment-list li div p {
+      display: inline-block;
+      color: #767676;
+      font-size: 24px; }
 
 .comments {
   background-color: rgba(53, 238, 254, 0.5);
@@ -130,12 +140,19 @@ table {
   .comments p {
     vertical-align: middle; }
 
-#lean_overlay {
-  position: fixed;
-  z-index: 100;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-  background: #000;
-  display: none; }
+.comm {
+  margin: 0 10px 0 15px; }
+
+.comm {
+  margin: 0 10px 0 15px; }
+
+@media only screen and (max-width: 600px) {
+  .grocery-cell p {
+    font-size: 12px; }
+
+  #food {
+    font-size: 24px;
+    margin-right: 10px; }
+
+  .grocery-item input {
+    margin-right: 10px; } }

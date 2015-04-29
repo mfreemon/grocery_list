@@ -14,7 +14,6 @@ time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
     vertical-align: baseline;
 }
@@ -48,6 +47,9 @@ body{
 }
 
 
+h1{
+    text-align:center;
+}
 .container{
     margin-top:100px;
 }
@@ -55,6 +57,16 @@ body{
 .button#entry{
     float:right;
     }
+.social{
+    margin-bottom:10px;
+}
+.share{
+    float:right;
+    padding-right:50px;
+ }
+.email{
+    padding-left:50px;
+ } 
 
 .shopping-list{
     padding:0 0 0 15px;
@@ -112,19 +124,22 @@ body{
     margin-right:10px; 
 }
 
-.new-comment{
-    display: none;
-    height:auto;
-    textarea{
-    height:200px;
-    border: 1px solid #0abefa;
-    margin: 0;
-    display: inline-block;
-    }
-    div{
-        padding:0;
-    }
+#new-comment{
+    position: fixed;
 }
+// .new-comment{
+//     display: none;
+//     height:auto;
+//     textarea{
+//     height:200px;
+//     border: 1px solid #0abefa;
+//     margin: 0;
+//     display: inline-block;
+//     }
+//     div{
+//         padding:0;
+//     }
+// }
 .person{
     padding:0;
     select{
@@ -132,12 +147,20 @@ body{
     }
 }
 .comment-list{
-    display: none;
-    li p{
-        display: inline-block;
-    }
+    display:none;
+    padding:0;
+        li{ 
+           div{
+            overflow: scroll;
+            height:100px;
+                p{
+                display: inline-block;
+                 color: #767676;
+                font-size: 24px;
+            }
+        }   
+    }    
 }
-
 .comments{   
     background-color:rgba(53, 238, 254, 0.5);
     color:#000;
@@ -150,14 +173,26 @@ body{
 
     }
 }
+.comm{
+    margin:0 10px 0 15px;
+}
 
-#lean_overlay {
-    position: fixed;
-    z-index:100;
-    top: 0px;
-    left: 0px;
-    height:100%;
-    width:100%;
-    background: #000;
-    display: none;
+.comm{
+    margin:0 10px 0 15px;
+}
+
+@media only screen and (max-width: 600px) {
+
+   .grocery-cell p { 
+    font-size: 12px; 
+    }
+   #food{ 
+    font-size:24px;
+    margin-right: 10px; 
+    }
+    .grocery-item input{
+        margin-right:10px;
+    }
+
+
 }

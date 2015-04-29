@@ -47,14 +47,32 @@ body{
      // background-image: url('../img/wood.jpg');
 }
 
+button#post{
+    margin-bottom:0;
+    padding-bottom:16px;
+    width:100%;
+}
+
+h1{
+    text-align: center;
+}
 
 .container{
     margin-top:100px;
 }
-
+.social{
+    margin-bottom:10px;
+}
 .button#entry{
     float:right;
     }
+ .share{
+    float:right;
+    padding-right:50px;
+ }
+ .email{
+    padding-left:50px;
+ }   
 
 .shopping-list{
     padding:0 0 0 15px;
@@ -111,28 +129,46 @@ body{
 
 .new-comment{
     display: none;
-    height:50px;
     textarea{
     border-radius:5px;
+    line-height: 50px;
     border: 1px solid #0abefa;
     margin: 0;
+    padding:0;
     display: inline-block;
     }
     div{
         padding:0;
-        height:50px;
     }
 }
 .person{
     padding:0;
     select{
     height:50px;
+    margin:0;
+    padding:0;
     }
 }
+.visible{
+    display:block;
+}
+.hidden{
+    display: none;
+}
 .comment-list{
-    li p{
-        display: inline-block;
-    }
+    padding:0;
+    margin-top:-3px;
+        li{ 
+           div{
+            overflow: scroll;
+            height:100px;
+                p{
+                display: inline-block;
+                 color: #767676;
+                font-size: 24px;
+            }
+        }   
+    }    
 }
 
 
@@ -149,10 +185,9 @@ body{
     }
 }
 
-
-// @media (max-width: 600px) {
- 
-// }
+.comm{
+    margin:0 10px 0 15px;
+}
 
 
 
