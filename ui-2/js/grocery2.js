@@ -12,6 +12,12 @@ var comment_text =['<div id="new-comment" class="reveal-modal" data-reveal aria-
                 	'<button class="button radius add-comment" id ="post" >Post Comment</button>',
               		'</form></div>']; 	
 
+   	
+     var notification = parseInt($('.notify').html());
+
+    
+
+
    	//accordion that expands the list of comments
 	function view_comment(event){
 		event.preventDefault();
@@ -70,7 +76,8 @@ var comment_text =['<div id="new-comment" class="reveal-modal" data-reveal aria-
 			'<p id ="food" class="large-5 medium-3 small-4 columns">'+ x + '</p>',
 			'<div class="medium-1 small-1 columns" id ="delete"><a href="#"><img src="img/delete.png"></a></div>',
 			'<p class =" large-2 medium-3 small-3 columns"><a href="#" class="add-tab">Add Comment</a></p>', 
-			'<p class ="large-2 medium-3 small-2 columns" id="comments-tab"><a href="#" alt ="View Comments">Comments</a></p></div>',
+			'<div class ="large-2 medium-3 small-2 columns"><div class="notification"><span>0</span></div>',
+			'<p id="comments-tab"><a href="#" alt ="View Comments">Comments</a></p></div></div>',
 			'<div class = "comment-list large-12 medium-12 small-12 columns"><ul></ul></div>'
 		];
 		$('.shopping-list').append(groceries.join('') + comment_text.join(''));	
@@ -83,6 +90,11 @@ $(document).ready(function(){
 	
 	  //event handlers for the app
 	$('#entry').on('click', append);
+	$('.increase').on('click', function(){
+		notification++
+		console.log(notification);
+		$('.notify').html(notification);
+	});
 	$('.new-list').on('click', new_list);
 	$(".shopping-list").on('click','.grocery-cell #comments-tab', view_comment); 	
 	$('.shopping-list').on('change','.grocery-item #checkbox1', checkoff);
