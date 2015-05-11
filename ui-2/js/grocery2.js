@@ -13,7 +13,11 @@ var comment_text =['<div id="new-comment" class="reveal-modal" data-reveal aria-
               		'</form></div>']; 	
 
    	
-     var notification = parseInt($('.notify').html());
+   
+
+    
+ 
+    
 
     
 
@@ -51,12 +55,15 @@ var comment_text =['<div id="new-comment" class="reveal-modal" data-reveal aria-
 	// appending commmentary to the comment list
 	function add_comment(event){
 		event.preventDefault();
+		var notification= parseInt($(this).closest('.grocery-cell').find('.notify').html());
 		var comm = $(this).closest('.grocery-cell').find('#textbox').val();
 		var person = $(this).closest('.grocery-cell').find('option:selected').val();
 		if(comm ==0 ){
 			alert(person +"," + " " + "Please enter your comment");
 			}else{
-				$(this).closest('.grocery-cell').find('.comment-list ul').append('<li class="comments"><div><p class="comm">'+ person +':'+'</p>'+'<p>'+ comm+ '</p></div></li>');			
+				notification++;
+				$(this).closest('.grocery-cell').find('.notify').html(notification);
+				$(this).closest('.grocery-cell').find('.comment-list ul').append('<li class="comments"><div><p class="comm">'+ person +':'+'</p>'+'<p>'+ comm+ '</p></div></li>');
 				$(this).closest('.grocery-cell').find('#new-comment').foundation('reveal','close');
 			}
 		$(this).closest('.grocery-cell').find('#textbox').val('');
@@ -76,7 +83,7 @@ var comment_text =['<div id="new-comment" class="reveal-modal" data-reveal aria-
 			'<p id ="food" class="large-5 medium-3 small-4 columns">'+ x + '</p>',
 			'<div class="medium-1 small-1 columns" id ="delete"><a href="#"><img src="img/delete.png"></a></div>',
 			'<p class =" large-2 medium-3 small-3 columns"><a href="#" class="add-tab">Add Comment</a></p>', 
-			'<div class ="large-2 medium-3 small-2 columns"><div class="notification"><span>0</span></div>',
+			'<div class ="large-2 medium-3 small-2 columns"><div class="notification"><span class="notify">0</span></div>',
 			'<p id="comments-tab"><a href="#" alt ="View Comments">Comments</a></p></div></div>',
 			'<div class = "comment-list large-12 medium-12 small-12 columns"><ul></ul></div>'
 		];
@@ -90,11 +97,6 @@ $(document).ready(function(){
 	
 	  //event handlers for the app
 	$('#entry').on('click', append);
-	$('.increase').on('click', function(){
-		notification++
-		console.log(notification);
-		$('.notify').html(notification);
-	});
 	$('.new-list').on('click', new_list);
 	$(".shopping-list").on('click','.grocery-cell #comments-tab', view_comment); 	
 	$('.shopping-list').on('change','.grocery-item #checkbox1', checkoff);
